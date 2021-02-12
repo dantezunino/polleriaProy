@@ -1,2 +1,3 @@
 # polleriaProy
-Proyecto freelance cancelado. Queda disponible el prototipo preparado para enseñar en la reunión. Software de control de stock con funciones especiales.
+Proyecto freelance cancelado. Queda disponible el prototipo preparado para enseñar en la reunión. Software de control de stock con funciones especiales. La idea era crear un software de control de stock que sirviera multiples propósitos: llevar control de las ventas, compras y fabricación de nuevos productos, y que al mismo tiempo el programa avise al usuario, en base a los insumos disponibles, qué productos estaban disponible para la venta y en qué cantidades. Lamentablemente el proyecto fue suspendido hasta nuevo aviso, incluso antes de ver el prototipo o discutir costos. Sirve para muestra.
+ 
