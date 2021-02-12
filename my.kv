@@ -1,0 +1,271 @@
+<MyLayout>
+    BoxLayout:
+        size:root.width, root.height
+        orientation: 'vertical'
+        Label:
+            size_hint: (1,0.05)
+            id:usuario_label
+            text:"Usuario: "
+        TabbedPanel:
+            do_default_tab: False
+            TabbedPanelItem:
+                #on_press: root.tiempoModulo()
+                text:"Usuarios"
+                BoxLayout:
+                    orientation: 'horizontal'
+                    Label:
+                        text:""
+                    BoxLayout:
+                        orientation:"vertical"
+                        size_hint: (1, 0.7)
+                        pos_hint: {'center_x': .5, 'center_y': .5}
+                        Label:
+                            canvas.before:
+                                Color:
+                                    rgba: (0, 0, 0, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                            text:"User"
+                            font_size: 20
+                        TextInput:
+                            id:username_input
+                            hint_text:"UserName"
+                            font_size: 20
+                        Label:
+                            canvas.before:
+                                Color:
+                                    rgba: (0, 0, 0, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                            text:"Pass"
+                            font_size: 20
+                        TextInput:
+                            id:password_input
+                            hint_text:"Password"
+                            password:True
+                            font_size: 20
+                        Button:
+                            text:"Ingresar"
+                            on_press: root.logginUsuario()
+                        Button:
+                            text:"Salir"
+                            on_press: root.desloggearUsuario()
+                        Button:
+                            text:"Nuevo Usuario"
+                            on_press: root.popUpNuevoUsuario()
+                    Label:
+                        text:""
+            TabbedPanelItem:
+                #on_press: root.tiempoModulo()
+                on_release: root.tablaModulo1()
+                text:"Modulo 1"
+                BoxLayout:
+                    orientation:"horizontal"
+                    BoxLayout:
+                        id:tabla_modulo1
+                        orientation:"horizontal"
+                    BoxLayout:
+                        orientation:"vertical"
+                        size_hint: (0.3, 0.7)
+                        pos_hint: {'center_x': .5, 'center_y': .5}
+                        Button:
+                            text:"Cambiar Tabla"
+                            on_press: root.tablaModulo1()
+                            size_hint: (1, 0.3)
+                        Spinner:
+                            id:spinner_modulo1
+                            size_hint: (1, 0.3)
+                            text: 'Materia Prima'
+                            values: 'Materia Prima', 'Productos', 'Menú', 'Proveedores'
+                        Label:
+                            text:""
+                        BoxLayout:
+                            orientation:"vertical"
+                            Button:
+                                text:"Agregar +"
+                                font_size:20
+                            Button:
+                                text:"Editar ·"
+                                font_size:20
+                            Button:
+                                text:"Borrar -"
+                                font_size:20
+            TabbedPanelItem:
+                #on_press: root.tiempoModulo()
+                text:"Modulo 2"
+                TabbedPanel:
+                    size:root.width, root.height
+                    do_default_tab: False
+                    TabbedPanelItem:
+                        on_press: root.tiempoModulo()
+                        text:"Compra"
+                        BoxLayout:
+                            orientation: 'vertical'
+                            BoxLayout:
+                                orientation: 'horizontal'
+                                TreeView:
+                                    id:compra_1
+                                    root_options:{"text":"Estado", "font_size":16}
+                                TreeView:
+                                    id:compra_2
+                                    root_options:{"text":"Producto", "font_size":16}
+                                TreeView:
+                                    id:compra_3
+                                    root_options:{"text":"Costo", "font_size":16}
+                            BoxLayout:
+                                orientation: 'horizontal'
+                                size_hint: (1, 0.1)
+                                Button:
+                                    text:"Nueva Compra"
+                                Button:
+                                    text:"Modificar"
+                    TabbedPanelItem:
+                        on_press: root.tiempoModulo()
+                        text:"Venta"
+                        BoxLayout:
+                            orientation: 'horizontal'
+                            BoxLayout:
+                                orientation: 'vertical'
+                                Label:
+                                    size_hint: (1, 0.1)
+                                    text:"Menú"
+                                    canvas.before:
+                                        Color:
+                                            rgba: (0, 0, 0, 1)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                Button:
+                                    size_hint: (1, 0.1)
+                                    text:"Custom"
+                                    background_color:(1,1,0,1)
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    GridLayout:
+                                        size_hint: (1, 0.8)
+                                        #orientation: 'vertical'
+                                        cols:2
+                                        Button:
+                                            id:menu_boton_1
+                                            text:"Boton 1"
+                                            background_color:(1,0.19,0,1)
+                                        Button:
+                                            id:menu_boton_2
+                                            text:"Boton 2"
+                                        Button:
+                                            id:menu_boton_3
+                                            text:"Boton 3"
+                                        Button:
+                                            id:menu_boton_4
+                                            text:"Boton 4"
+                                            background_color:(1,0.19,0,1)
+                                        Button:
+                                            id:menu_boton_5
+                                            text:"Boton 5"
+                                            background_color:(1,0.19,0,1)
+                                        Button:
+                                            id:menu_boton_6
+                                            text:"Boton 6"
+                                        Button:
+                                            id:menu_boton_7
+                                            text:"Boton 7"
+                                        Button:
+                                            id:menu_boton_8
+                                            text:"Boton 8"
+                                            background_color:(1,0.19,0,1)
+                                    GridLayout:
+                                        cols:2
+                                        size_hint: (1, 0.5)
+                                        Button:
+                                            id:menu_promo_1
+                                            text:"Promo 1"
+                                            background_color:(0.5,1,1,1)
+                                            on_press: root.tiempoModulo()
+                                        Button:
+                                            id:menu_promo_2
+                                            text:"Promo 2"
+                                            background_color:(0.5,1,1,1)
+                                        Button:
+                                            id:menu_promo_3
+                                            text:"Promo 3"
+                                            background_color:(0.5,1,1,1)
+                                        Button:
+                                            id:menu_promo_4
+                                            text:"Promo 4"
+                                            background_color:(0.5,1,1,1)
+                                        
+                            BoxLayout:
+                                orientation: 'vertical'
+                                size_hint: (0.02, 1)
+                                Label:
+                                    canvas.before:
+                                        Color:
+                                            rgba: (0.1, 0.1, 0.1, 1)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                    text:""
+                            BoxLayout:
+                                orientation: 'vertical'
+                                size_hint: (0.3, 1)
+                                Label:
+                                    text:"Ticket"
+                                    size_hint: (1, 0.2)
+                                    canvas.before:
+                                        Color:
+                                            rgba: (1,0.19,0,0.52)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                Label:
+                                    text:"Espacio para insertar gilada"
+                                Label:
+                                    text:"Lo mismo que lo anterior"
+                                Label:
+                                    text:"Esto es una muestra"
+                                BoxLayout:
+                                    orientation: 'horizontal'
+                                    size_hint: (1, 0.2)
+                                    pos_hint: {'center_x': .5, 'center_y': .5}
+                                    Button:
+                                        text:"Finalizar venta"
+
+
+                    TabbedPanelItem:
+                        on_press: root.tiempoModulo()
+                        text:"Fabricación"
+                        BoxLayout:
+                            orientation: 'vertical'
+                            Label:
+                                text:"EN construcción :)"
+            TabbedPanelItem:
+                #on_press: root.tiempoModulo()
+                text:"Modulo 3"
+                BoxLayout:
+                    orientation: 'vertical'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: (1, 0.2)
+                        Spinner:
+                            size_hint: (1, 0.5)
+                            text: 'Historial de Compras'
+                            values: 'Historial de Compras', 'Historial de Ventas', 'Historial de Fabricaciones'
+                        Label:
+                            text: ""
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        TreeView:
+                            id:data_1
+                            root_options:{"text":"Usuario", "font_size":16}
+                        TreeView:
+                            id:data_2
+                            root_options:{"text":"Operación", "font_size":16}
+                        TreeView:
+                            id:data_3
+                            root_options:{"text":"Fecha", "font_size":16}
+                        TreeView:
+                            id:data_4
+                            root_options:{"text":"Motivo", "font_size":16}
+    
